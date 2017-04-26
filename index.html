@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="quoteBookApp">
+
+<head>
+    <title>Quote Book App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="main.css" rel="stylesheet">
+</head>
+
+<body ng-controller="mainController">
+    <div class="wrapper">
+      <div class="bear">
+        <input ng-model="newQuote" placeholder="Quote" required>
+        <input ng-model="newAuthor" placeholder="Author" required>
+        <button ng-click="addQuote(newQuote, newAuthor)"></button>
+      </div>
+    </div>
+
+
+    <div class="quotes" ng-repeat="quote in quotes">
+
+        <p class="quote-text">"{{quote.text}}"</p>
+        <p class="quote-author">{{quote.author}}</p>
+    </div>
+    <!--Scripts-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
+    <script src="app.js"></script>
+    <script src="mainController.js"></script>
+    <script src="quoteService.js"></script>
+</body>
+
+</html>
